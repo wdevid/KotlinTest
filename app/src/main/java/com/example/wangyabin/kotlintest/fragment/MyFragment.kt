@@ -9,7 +9,7 @@ import com.example.wangyabin.kotlintest.utils.ExchangerData
 /**
  * Created by wangyabin on 2017/5/21.
  */
-class MyFragment : BaseFragment(),ExchangerData.OnDataExchangeListener{
+class MyFragment : BaseFragment(){
     override fun inData(message: Any) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }

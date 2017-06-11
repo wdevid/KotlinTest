@@ -2,6 +2,7 @@ package com.example.wangyabin.kotlintest.fragment
 
 import android.os.Bundle
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,11 +11,25 @@ import com.example.wangyabin.kotlintest.MainActivity
 import com.example.wangyabin.kotlintest.MyApp
 import com.example.wangyabin.kotlintest.R
 import com.example.wangyabin.kotlintest.adapter.MyAdapter
+import com.example.wangyabin.kotlintest.utils.ExchangerData
 
 /**
  * Created by wangyabin on 2017/5/21.
  */
 class BijiFragment(fm: MainActivity) : BaseFragment() {
+    override fun inData(message: Any) {
+        when(message){
+            "add"->{
+                var db : daobiji = daobiji(MyApp.instance())
+                mRecyclerView!!.adapter = MyAdapter(db.selectAll());
+                Log.e("aadd","addd")
+            }
+        }
+    }
+
+    override fun inClick(view: View, type: Int) {
+    }
+
     var mView: View? = null
     var mRecyclerView: RecyclerView? = null
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {

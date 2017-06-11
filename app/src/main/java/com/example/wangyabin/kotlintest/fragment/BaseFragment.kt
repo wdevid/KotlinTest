@@ -5,11 +5,21 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.wangyabin.kotlintest.utils.ExchangerData
 
 /**
  * Created by wangyabin on 2017/5/21.
  */
-open class BaseFragment : Fragment(){
+open class BaseFragment : Fragment(), ExchangerData.OnDataExchangeListener{
+    companion object {
+        var exchaner : ExchangerData= ExchangerData()
+    }
+    override fun inData(message: Any) {
+    }
+
+    override fun inClick(view: View, type: Int) {
+    }
+
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         initView()
         initData()

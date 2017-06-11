@@ -7,7 +7,7 @@ import android.view.View
 /**
  * Created by wangyabin on 2017/5/21.
  */
-class ExchangerData {
+open class ExchangerData {
 
     private val container = Vector<OnDataExchangeListener>()
 
@@ -19,7 +19,7 @@ class ExchangerData {
         container.remove(listener)
     }
 
-    fun exchange(message: Any, c: Class<*>) {
+   open fun exchange(message: String, c: Class<*>) {
         val i = `in`(c)
         if (i > -1) {
             container[i].inData(message)
@@ -47,4 +47,5 @@ class ExchangerData {
 
         fun inClick(view: View, type: Int)
     }
+
 }
