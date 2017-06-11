@@ -35,6 +35,7 @@ class WriteBijiFragment : BaseFragment(),View.OnClickListener{
                 var Tag : String = "add"
                 exchaner.exchange(Tag,BaseFragment.javaClass)
 
+
             }
         }
 
